@@ -1,6 +1,10 @@
 
 // creating array for storing data from Imputs
-let myArray2 = [];
+let myArray2 = JSON.parse(localStorage.getItem('myStorage')); 
+if (!myArray2){
+  myArray2 = [{
+    inputValue: "Sleeping",
+    dateValue: 'djdidj'}]};
 
 function storageFun(){
 localStorage.setItem('myStorage', JSON.stringify(myArray2));
@@ -23,12 +27,8 @@ document.querySelector('.add-button')
   //function for generating HTMl by using our array data and display it in the page
   function generateHTML(){
   let valueToDisplay = '';
-  const STorage = localStorage.getItem('myStorage');
-  const myArray = JSON.parse(STorage);
-  console.log(myArray)
-
   //loop through the array
-  myArray.forEach((element, index) => {
+  myArray2.forEach((element, index) => {
     valueToDisplay+= `
       <p class="todo-name">${element.inputValue}</p>
       <p class="todo-date">${element.dateValue}</p>
@@ -42,9 +42,7 @@ document.querySelector('.add-button')
 
 
 function deleteItem(index) {
-  const STorage = localStorage.getItem('myStorage');
-  const myArray = JSON.parse(STorage);
-  myArray.splice(index, 1);
-  localStorage.setItem('myStorage', JSON.stringify(myArray));
+  myArray2.splice(index, 1);
+  storageFub()
   generateHTML();
 }
