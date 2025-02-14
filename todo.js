@@ -40,15 +40,14 @@ document.querySelector('.add-button')
   document.querySelector('.generated-html').innerHTML = valueToDisplay;
 }
 
-
 function deleteItem(index) {
   myArray2.splice(index, 1);
   storageFub();
   generateHTML();
+  return index;
 };
 
 
-document.getElementById('todo-input').addEventLinstner('input', () => {
-
+document.getElementById('todo-input').addEventListner('input', () => {
   generateHTML();
 });
