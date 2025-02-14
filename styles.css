@@ -16,7 +16,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 800px;
+  max-width: 600px;
+  text-align: center;
 }
 
 input {
@@ -34,12 +35,32 @@ input:focus {
   outline: none;
 }
 
+/* Add Button Styles */
+.add-button {
+  background-color: #00bcd4; /* Cyan add button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.add-button:hover {
+  background-color: #0097a7; /* Darker cyan on hover */
+}
+
 /* Task List Styles */
 .generated-html {
+  margin-top: 20px;
+}
+
+.generated-html2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  margin-top: 20px;
 }
 
 .todo-item {
@@ -87,52 +108,6 @@ input:focus {
   background-color: #ff1a1a; /* Darker red on hover */
 }
 
-/* Add Button Styles */
-.add-button {
-  background-color: #00bcd4; /* Cyan add button */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.add-button:hover {
-  background-color: #0097a7; /* Darker cyan on hover */
-}
-
-/* Filters and Clear All Buttons */
-.filters {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.filters button, .clear-all {
-  background-color: #00bcd4; /* Cyan buttons */
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.filters button:hover, .clear-all:hover {
-  background-color: #0097a7; /* Darker cyan on hover */
-}
-
-/* Task Count Styles */
-.task-count {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #666;
-  text-align: center;
-}
-
 /* Completed Task Styles */
 .todo-item.completed .todo-name {
   text-decoration: line-through;
@@ -152,4 +127,4 @@ input:focus {
 
 .todo-item.deleting {
   animation: fadeOut 0.3s ease forwards;
-  }
+}
