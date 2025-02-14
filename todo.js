@@ -19,9 +19,9 @@ document.querySelector('.add-button')
       dateValue: dateinput,
     });
     //clear input after collecting data
+    storageFun();
     document.getElementById('todo-input').value = '';
     document.querySelector('.date-input').value = '';
-    storageFun()
     generateHTML();
   })
   //function for generating HTMl by using our array data and display it in the page
@@ -35,7 +35,7 @@ document.querySelector('.add-button')
       <button class="todo-button" onclick="deleteItem(${index})">Delete</button>
     `;
   });
-
+  storageFun();
   //put the HTML in the page
   document.querySelector('.generated-html').innerHTML = valueToDisplay;
 }
