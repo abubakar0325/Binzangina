@@ -17,7 +17,13 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px;
-  text-align: center;
+}
+
+/* Input and Button Layout */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 input {
@@ -25,8 +31,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
-  width: calc(100% - 22px); /* Full width minus padding and border */
-  margin-bottom: 10px;
+  flex: 1; /* Take up remaining space */
   transition: border-color 0.3s ease;
 }
 
@@ -35,7 +40,6 @@ input:focus {
   outline: none;
 }
 
-/* Add Button Styles */
 .add-button {
   background-color: #00bcd4; /* Cyan add button */
   color: white;
@@ -45,7 +49,6 @@ input:focus {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
-  width: 100%;
 }
 
 .add-button:hover {
