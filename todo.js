@@ -43,6 +43,12 @@ document.querySelector('.add-button')
 
 function deleteItem(index) {
   myArray2.splice(index, 1);
-  storageFub()
+  storageFub();
   generateHTML();
-}
+};
+
+
+document.getElementById('todo-input').addEventLinstner('input', () => {
+
+  generateHTML();
+});
